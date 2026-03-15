@@ -185,17 +185,18 @@
 
 .about-stats {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   gap: 1.5rem;
 }
 
 .stat-card {
   background: linear-gradient(160deg, rgba(201,150,44,0.06) 0%, rgba(255,255,255,0.02) 100%);
   border: 1px solid rgba(201, 150, 44, 0.18);
-  padding: 2.2rem 2rem;
+  padding: 2.2rem 1.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   text-align: center;
   gap: 0.5rem;
   position: relative;
@@ -220,6 +221,41 @@
 
 .stat-card:hover::before {
   opacity: 1;
+}
+
+/* Center date card — featured */
+.stat-card--highlight {
+  background: linear-gradient(135deg, rgba(201,150,44,0.14), rgba(201,150,44,0.06));
+  border-color: rgba(201,150,44,0.35);
+  padding: 2.5rem 1.5rem;
+}
+
+.stat-card--highlight::before {
+  background: radial-gradient(circle at 50% 50%, rgba(201,150,44,0.12) 0%, transparent 60%);
+  opacity: 1;
+}
+
+.stat-card--highlight:hover {
+  border-color: rgba(201,150,44,0.6);
+  box-shadow: 0 8px 40px rgba(201,150,44,0.15), 0 0 0 1px rgba(201,150,44,0.1);
+}
+
+/* Full-width bottom card */
+.stat-card--wide {
+  grid-column: 1 / -1;
+  flex-direction: row;
+  gap: 1rem;
+  padding: 1.8rem 2rem;
+  justify-content: center;
+}
+
+.stat-card--wide .stat-num {
+  font-size: 2.4rem;
+}
+
+.stat-card--wide .stat-label {
+  font-size: 0.7rem;
+  text-align: left;
 }
 
 .about-quote {
@@ -259,30 +295,6 @@
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--silver);
-}
-
-.about-date-badge {
-  grid-column: 1 / -1;
-  background: linear-gradient(135deg, rgba(201,150,44,0.14), rgba(201,150,44,0.06));
-  border: 1px solid rgba(201, 150, 44, 0.35);
-  padding: 2rem;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
-
-.about-date-badge::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(201,150,44,0.1) 0%, transparent 60%);
-  pointer-events: none;
-}
-
-.about-date-badge:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 40px rgba(201,150,44,0.12);
 }
 
 .badge-day {
@@ -548,5 +560,6 @@
   .countdown-sep { display: none; }
   .tickets-cta-inner { padding: 4rem 1.5rem; }
   .kontakt-inner { padding: 4rem 1.5rem; }
-  .about-stats { grid-template-columns: 1fr 1fr; }
+  .about-stats { grid-template-columns: 1fr 1fr 1fr; }
+  .stat-card--wide { flex-direction: column; gap: 0.5rem; }
 }
