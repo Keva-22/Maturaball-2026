@@ -193,6 +193,13 @@
   align-items: start;
 }
 
+.tickets-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .ticket-card {
   position: relative;
   overflow: hidden;
@@ -202,6 +209,16 @@
   border-color: rgba(201,150,44,0.5);
   background: rgba(201,150,44,0.05);
   transform: translateY(-8px);
+}
+
+.ticket-card--info {
+  border-color: rgba(168,180,200,0.2);
+  background: rgba(255,255,255,0.02);
+}
+
+.ticket-info-label {
+  background: rgba(168,180,200,0.15);
+  color: var(--silver);
 }
 
 .ticket-featured-label {
@@ -585,6 +602,8 @@
   .bereiche-grid { grid-template-columns: 1fr; }
   .preorder-form .form-row { grid-template-columns: 1fr; }
   .preorder-form { padding: 2rem 1.5rem !important; }
+  .tickets-grid--two { grid-template-columns: 1fr; }
+  .ticket-card--featured { transform: translateY(0); }
 }
 @media (max-width: 400px) {
   .komitee-grid--members { grid-template-columns: 1fr; }

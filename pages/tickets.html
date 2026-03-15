@@ -19,6 +19,7 @@
     <li><a href="../index.html#programm">Programm</a></li>
     <li><a href="../index.html#location">Location</a></li>
     <li><a href="komitee.html">Komitee</a></li>
+    <li><a href="../index.html#kontakt">Kontakt</a></li>
     <li><a href="tickets.html" class="nav-cta">Tickets</a></li>
   </ul>
   <div class="nav-toggle"><span></span><span></span><span></span></div>
@@ -66,66 +67,15 @@
       </div>
 
       <!-- Ticket Categories -->
-      <div class="tickets-grid reveal" style="margin-top:4rem;">
-
-        <div class="ticket-card card">
-          <div class="ticket-card-header">
-            <span class="ticket-type">Schüler·innen</span>
-            <div class="ticket-price">
-              <span class="price-amount gold-text">€ 30</span>
-              <span class="price-note">inkl. aller Gebühren</span>
-            </div>
-          </div>
-          <div class="ticket-divider">
-            <div class="ticket-holes">
-              <div class="hole"></div>
-              <div class="hole-line"></div>
-              <div class="hole"></div>
-            </div>
-          </div>
-          <ul class="ticket-includes">
-            <li>✦ Einlass zur Ballnacht</li>
-            <li>✦ Eröffnungswalzer &amp; Polonaise</li>
-            <li>✦ Live-Musik &amp; DJ</li>
-            <li>✦ Mitternachtsshow</li>
-            <li>✦ 1 Getränk inklusive</li>
-          </ul>
-          <a href="#kaufen" class="btn btn-primary" style="width:100%;justify-content:center;">Jetzt kaufen</a>
-        </div>
+      <div class="tickets-grid tickets-grid--two reveal" style="margin-top:4rem;">
 
         <div class="ticket-card ticket-card--featured card">
-          <div class="ticket-featured-label">Beliebt</div>
+          <div class="ticket-featured-label">Einheitspreis</div>
           <div class="ticket-card-header">
-            <span class="ticket-type">Pärchen</span>
+            <span class="ticket-type">Ballticket</span>
             <div class="ticket-price">
-              <span class="price-amount gold-text">€ 56</span>
-              <span class="price-note">2 Tickets · spare € 4</span>
-            </div>
-          </div>
-          <div class="ticket-divider">
-            <div class="ticket-holes">
-              <div class="hole"></div>
-              <div class="hole-line"></div>
-              <div class="hole"></div>
-            </div>
-          </div>
-          <ul class="ticket-includes">
-            <li>✦ 2× Einlass zur Ballnacht</li>
-            <li>✦ Eröffnungswalzer &amp; Polonaise</li>
-            <li>✦ Live-Musik &amp; DJ</li>
-            <li>✦ Mitternachtsshow</li>
-            <li>✦ 2× Begrüßungsgetränk</li>
-            <li>✦ Reservierter Tischplatz</li>
-          </ul>
-          <a href="#kaufen" class="btn btn-primary" style="width:100%;justify-content:center;">Jetzt kaufen</a>
-        </div>
-
-        <div class="ticket-card card">
-          <div class="ticket-card-header">
-            <span class="ticket-type">Extern / Gäste</span>
-            <div class="ticket-price">
-              <span class="price-amount gold-text">€ 32</span>
-              <span class="price-note">inkl. aller Gebühren</span>
+              <span class="price-amount gold-text">€ 30</span>
+              <span class="price-note">für alle · inkl. aller Gebühren</span>
             </div>
           </div>
           <div class="ticket-divider">
@@ -139,10 +89,35 @@
             <li>✦ Einlass zur Ballnacht</li>
             <li>✦ Eröffnungswalzer &amp; Polonaise</li>
             <li>✦ Live-Musik &amp; DJ</li>
-            <li>✦ Mitternachtsshow</li>
-            <li>✦ 1 Getränk inklusive</li>
+            <li>✦ Mitternachtseinlage</li>
+            <li>✦ Shuttle Bus nach Salzburg (02:00)</li>
           </ul>
-          <a href="#kaufen" class="btn btn-outline" style="width:100%;justify-content:center;">Jetzt kaufen</a>
+          <a href="#kaufen" class="btn btn-primary" style="width:100%;justify-content:center;">Jetzt kaufen</a>
+        </div>
+
+        <div class="ticket-card ticket-card--info card">
+          <div class="ticket-featured-label ticket-info-label">Optional</div>
+          <div class="ticket-card-header">
+            <span class="ticket-type">Tischreservierung</span>
+            <div class="ticket-price">
+              <span class="price-amount gold-text" style="font-size:1.4rem;">Auf Anfrage</span>
+              <span class="price-note">extern buchbar</span>
+            </div>
+          </div>
+          <div class="ticket-divider">
+            <div class="ticket-holes">
+              <div class="hole"></div>
+              <div class="hole-line"></div>
+              <div class="hole"></div>
+            </div>
+          </div>
+          <ul class="ticket-includes">
+            <li>✦ Reservierter Tisch für deine Gruppe</li>
+            <li>✦ Bevorzugte Platzsicherung</li>
+            <li>✦ Ideal für größere Gruppen</li>
+            <li>✦ Buchung per E-Mail anfragen</li>
+          </ul>
+          <a href="mailto:Maturaball2026@herzjesugym.at" class="btn btn-outline" style="width:100%;justify-content:center;">Reservierung anfragen</a>
         </div>
 
       </div>
@@ -205,9 +180,7 @@
                 <label class="form-label">Ticket-Typ</label>
                 <select class="form-select" disabled>
                   <option value="">Bitte wählen …</option>
-                  <option value="schueler">Schüler·innen — € 30</option>
-                  <option value="paerchen">Pärchen — € 56</option>
-                  <option value="extern">Extern / Gäste — € 32</option>
+                  <option value="einlass">Ballticket — € 30</option>
                 </select>
               </div>
               <div class="form-group">
@@ -253,7 +226,11 @@
           </details>
           <details class="faq-item">
             <summary>Dürfen externe Gäste teilnehmen?</summary>
-            <p>Ja! Externe Gäste sind herzlich willkommen. Schüler·innen haften für ihre mitgebrachten Gäste.</p>
+            <p>Ja! Externe Gäste sind herzlich willkommen. Das Ticket kostet für alle € 30. Schüler·innen haften für ihre mitgebrachten Gäste.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Wie kann ich einen Tisch reservieren?</summary>
+            <p>Tischreservierungen sind extern buchbar. Bitte kontaktiere uns per E-Mail: <a href="mailto:Maturaball2026@herzjesugym.at" style="color:var(--gold-light);">Maturaball2026@herzjesugym.at</a></p>
           </details>
         </div>
       </div>
