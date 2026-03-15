@@ -2,32 +2,18 @@
    CARPE NOCTEM · sponsoring.css
    ═══════════════════════════════════════════════ */
 
-/* ── Tier Label ─────────────────────────────── */
-.sponsor-tier-label {
-  font-family: var(--font-heading);
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-}
-
-/* ── Sponsor Grids ──────────────────────────── */
+/* ── Sponsor Grid ───────────────────────────── */
 .sponsor-grid {
   display: grid;
   gap: 1.5rem;
-  justify-content: center;
   margin-bottom: 1rem;
 }
 
-.sponsor-grid--gold {
-  grid-template-columns: repeat(2, minmax(200px, 280px));
-}
-
-.sponsor-grid--silber {
-  grid-template-columns: repeat(3, minmax(160px, 220px));
-}
-
-.sponsor-grid--bronze {
-  grid-template-columns: repeat(4, minmax(120px, 180px));
+.sponsor-grid--equal {
+  grid-template-columns: repeat(3, 1fr);
+  max-width: 860px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /* ── Sponsor Cards ──────────────────────────── */
@@ -70,16 +56,6 @@
   text-transform: uppercase;
 }
 
-.sponsor-logo-placeholder.small {
-  width: 90px;
-  height: 55px;
-}
-
-.sponsor-logo-placeholder.xsmall {
-  width: 70px;
-  height: 44px;
-  font-size: 0.55rem;
-}
 
 .sponsor-name {
   font-family: var(--font-heading);
@@ -189,16 +165,11 @@
 
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 900px) {
-  .sponsor-grid--gold     { grid-template-columns: repeat(2, 1fr); }
-  .sponsor-grid--silber   { grid-template-columns: repeat(2, 1fr); }
-  .sponsor-grid--bronze   { grid-template-columns: repeat(3, 1fr); }
-  .sponsor-pakete-grid    { grid-template-columns: 1fr; max-width: 480px; }
-  .sponsor-paket--featured,
-  .sponsor-paket--gold    { transform: translateY(0); }
+  .sponsor-grid--equal    { grid-template-columns: repeat(2, 1fr); }
   .sponsor-kontakt-info   { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 600px) {
-  .sponsor-grid--bronze   { grid-template-columns: repeat(2, 1fr); }
+  .sponsor-grid--equal    { grid-template-columns: 1fr 1fr; }
   .sponsor-kontakt        { padding: 2rem 1.5rem; }
 }
