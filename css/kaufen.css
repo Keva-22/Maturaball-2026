@@ -1,0 +1,195 @@
+/* ═══════════════════════════════════════════════
+   CARPE NOCTEM · kaufen.css
+   ═══════════════════════════════════════════════ */
+
+/* ── Hinweis Banner ─────────────────────────── */
+.kaufen-hinweis {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 1.2rem 2rem;
+  border: 1px solid rgba(201,150,44,0.25);
+  background: rgba(201,150,44,0.04);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.hinweis-icon {
+  color: var(--gold);
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.kaufen-hinweis p {
+  font-size: 0.9rem;
+  color: var(--silver);
+  max-width: none;
+  margin: 0;
+}
+
+.kaufen-hinweis strong {
+  color: var(--gold-pale);
+}
+
+/* ── Two-Column Layout ──────────────────────── */
+.kaufen-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ── Info Box ───────────────────────────────── */
+.kaufen-info-box {
+  padding: 2.5rem;
+}
+
+.kaufen-info-box h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--gold-light);
+}
+
+.kaufen-includes {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+
+.kaufen-includes li {
+  font-size: 0.92rem;
+  color: var(--champagne);
+  padding: 0.5rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.kaufen-includes li:first-child {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.kaufen-info-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  border-top: 1px solid rgba(201,150,44,0.15);
+  padding-top: 1.2rem;
+}
+
+.kim-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.kim-label {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.kim-item span:last-child {
+  font-size: 0.88rem;
+  color: var(--silver);
+  text-align: right;
+}
+
+/* ── Form Box ───────────────────────────────── */
+.kaufen-form-box {
+  padding: 2.5rem;
+}
+
+.kaufen-form-box h3 {
+  font-size: 1.1rem;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.form-row--full {
+  grid-template-columns: 1fr;
+}
+
+.form-select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,150,44,0.25);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.2rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  appearance: none;
+  cursor: pointer;
+}
+
+.form-select:focus { border-color: var(--gold); }
+.form-select option { background: var(--deep); }
+.form-select:disabled,
+.form-input:disabled { opacity: 0.5; cursor: not-allowed; }
+
+/* ── Tisch Placeholder ──────────────────────── */
+.kaufen-tisch-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px dashed rgba(201,150,44,0.25);
+  padding: 1.2rem;
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.placeholder-badge {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.kaufen-tisch-placeholder p {
+  font-size: 0.85rem;
+  color: var(--silver);
+  font-style: italic;
+  max-width: none;
+  margin: 0;
+}
+
+/* ── Divider ────────────────────────────────── */
+.kaufen-divider {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  max-width: 900px;
+  margin: 5rem auto;
+  color: rgba(201,150,44,0.4);
+}
+
+.kd-line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201,150,44,0.3), transparent);
+}
+
+/* ── Responsive ─────────────────────────────── */
+@media (max-width: 800px) {
+  .kaufen-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 500px) {
+  .kaufen-info-box,
+  .kaufen-form-box { padding: 1.5rem; }
+  .form-row { grid-template-columns: 1fr; }
+  .kaufen-hinweis { padding: 1rem 1.2rem; }
+}
