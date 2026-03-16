@@ -1,0 +1,674 @@
+/* ═══════════════════════════════════════════════
+   CARPE NOCTEM · inner-page.css
+   Shared styles for all subpages
+   ═══════════════════════════════════════════════ */
+
+/* ── Page Hero ─────────────────────────────── */
+.page-hero {
+  min-height: 38vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 8rem 2rem 5rem;
+  background:
+    radial-gradient(ellipse at 50% 100%, rgba(201,150,44,0.08) 0%, transparent 65%),
+    linear-gradient(180deg, var(--night) 0%, var(--deep) 100%);
+  border-bottom: 1px solid rgba(201,150,44,0.15);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle stars for page hero */
+.page-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 15% 30%, rgba(245,237,214,0.4) 0%, transparent 100%),
+    radial-gradient(1px 1px at 40% 15%, rgba(245,237,214,0.3) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 70% 40%, rgba(245,237,214,0.5) 0%, transparent 100%),
+    radial-gradient(1px 1px at 85% 20%, rgba(245,237,214,0.25) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 60%, rgba(245,237,214,0.35) 0%, transparent 100%),
+    radial-gradient(1px 1px at 25% 65%, rgba(245,237,214,0.2) 0%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 90% 55%, rgba(245,237,214,0.45) 0%, transparent 100%);
+  pointer-events: none;
+}
+
+.page-hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0.8rem 0 0.5rem;
+}
+
+.page-hero-sub {
+  font-style: italic;
+  color: var(--silver);
+  font-size: 1.05rem;
+  max-width: none;
+  margin-top: 0.5rem;
+}
+
+/* ══════════════════════════
+   KOMITEE PAGE
+   ══════════════════════════ */
+.komitee-group { margin-bottom: 3rem; }
+
+.komitee-grid { display: grid; gap: 2rem; }
+
+.komitee-grid--lead {
+  grid-template-columns: 1fr;
+  max-width: 500px;
+}
+
+.komitee-grid--members {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+.komitee-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+}
+
+.komitee-card--lead {
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+}
+
+.komitee-avatar {
+  width: 72px;
+  height: 72px;
+  background: linear-gradient(135deg, rgba(201,150,44,0.2), rgba(201,150,44,0.08));
+  border: 1px solid rgba(201,150,44,0.3);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+}
+
+.komitee-avatar--lg {
+  width: 100px;
+  height: 100px;
+}
+
+.avatar-initials {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  color: var(--gold-light);
+}
+
+.avatar-role-badge {
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--gold);
+  color: var(--night);
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  white-space: nowrap;
+}
+
+.komitee-info h3 { font-size: 1.1rem; margin-bottom: 0.2rem; }
+
+.komitee-role {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.5rem !important;
+  max-width: none;
+}
+
+.komitee-desc {
+  font-size: 0.9rem;
+  color: var(--silver);
+}
+
+/* ══════════════════════════
+   TICKETS PAGE
+   ══════════════════════════ */
+.tickets-info-banner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  border: 1px solid rgba(201,150,44,0.2);
+  padding: 1.5rem 2.5rem;
+  background: rgba(255,255,255,0.02);
+  flex-wrap: wrap;
+}
+
+.tib-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1;
+  min-width: 180px;
+}
+
+.tib-icon {
+  color: var(--gold);
+  font-size: 0.7rem;
+}
+
+.tib-item strong {
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gold-pale);
+  display: block;
+}
+
+.tib-item span {
+  color: var(--champagne);
+  font-size: 0.95rem;
+}
+
+.tib-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(201,150,44,0.2);
+}
+
+/* Ticket Cards */
+.tickets-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: start;
+}
+
+.tickets-grid--two {
+  grid-template-columns: repeat(2, 1fr);
+  max-width: 780px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ticket-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.ticket-card--featured {
+  border-color: rgba(201,150,44,0.5);
+  background: rgba(201,150,44,0.05);
+  transform: translateY(-8px);
+}
+
+.ticket-card--info {
+  border-color: rgba(168,180,200,0.2);
+  background: rgba(255,255,255,0.02);
+}
+
+.ticket-info-label {
+  background: rgba(168,180,200,0.15);
+  color: var(--silver);
+}
+
+.ticket-featured-label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: var(--gold);
+  color: var(--night);
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+}
+
+.ticket-card-header {
+  margin-bottom: 1.5rem;
+}
+
+.ticket-type {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.price-amount {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-top: 0.4rem;
+}
+
+.price-note {
+  font-size: 0.8rem;
+  color: var(--silver);
+  font-style: italic;
+}
+
+.ticket-divider {
+  margin: 1.2rem 0;
+}
+
+.ticket-holes {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.hole {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--night);
+  border: 1px solid rgba(201,150,44,0.3);
+  flex-shrink: 0;
+}
+
+.hole-line {
+  flex: 1;
+  border-top: 2px dashed rgba(201,150,44,0.2);
+}
+
+.ticket-includes {
+  list-style: none;
+  margin-bottom: 1.8rem;
+}
+
+.ticket-includes li {
+  font-size: 0.9rem;
+  color: var(--champagne);
+  padding: 0.4rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+}
+
+.ticket-includes li:first-child {
+  border-top: 1px solid rgba(255,255,255,0.04);
+}
+
+/* Kaufen Section */
+.kaufen-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.kaufen-step { text-align: center; }
+
+.step-num {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  line-height: 1;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Form Styles */
+.form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+
+.form-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+
+.form-input {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,150,44,0.25);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.2rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+}
+
+.form-input:focus {
+  border-color: var(--gold);
+}
+
+.form-input::placeholder { color: rgba(168,180,200,0.4); }
+
+/* FAQ */
+.faq-item {
+  border-bottom: 1px solid rgba(201,150,44,0.15);
+  padding: 0.2rem 0;
+}
+
+.faq-item summary {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: var(--gold-pale);
+  padding: 1.2rem 0;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s;
+}
+
+.faq-item summary::after {
+  content: '+';
+  font-size: 1.3rem;
+  color: var(--gold);
+  transition: transform 0.3s;
+  font-weight: 300;
+}
+
+.faq-item[open] summary::after { transform: rotate(45deg); }
+
+.faq-item summary:hover { color: var(--gold-light); }
+
+.faq-item > p {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  color: var(--silver);
+  font-size: 0.95rem;
+  max-width: none;
+  transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+}
+
+.faq-item[open] > p {
+  max-height: 300px;
+  opacity: 1;
+  padding: 0 0 1.2rem;
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+  .tickets-grid { grid-template-columns: 1fr; }
+  .ticket-card--featured { transform: none; }
+  .kaufen-grid { grid-template-columns: 1fr; }
+  .komitee-card--lead { flex-direction: column; }
+  .tib-divider { display: none; }
+  .tickets-info-banner { gap: 1rem; padding: 1.2rem; }
+}
+
+/* ══════════════════════════════════════════
+   PERSON COLORS (matching team sheet)
+   ══════════════════════════════════════════ */
+:root {
+  --color-lisa:    #4caf7d;
+  --color-jonah:   #e8768a;
+  --color-maria:   #b87cc0;
+  --color-raphi:   #5ab4c8;
+  --color-kathi:   #d4c144;
+  --color-clara:   #9aafc0;
+  --color-ludwig:  #d080c0;
+  --color-paul:    #7dc880;
+  --color-gabriel: #e05848;
+  --color-leonie:  #7ab4d8;
+  --color-xaver:   #a8b4c8;
+  --color-kevin:   #5080d8;
+}
+
+/* ══════════════════════════════════════════
+   KERNTEAM CARDS – ENHANCED
+   ══════════════════════════════════════════ */
+.komitee-grid--members {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.komitee-card {
+  text-align: center;
+  align-items: center;
+  padding: 2rem 1.2rem 1.8rem;
+  transition: border-color 0.4s, transform 0.4s, box-shadow 0.4s;
+}
+
+.komitee-card .komitee-avatar {
+  margin: 0 auto 0.8rem;
+  width: 80px;
+  height: 80px;
+}
+
+.komitee-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.2rem;
+}
+
+/* Person-specific avatar glow + initials color */
+.person-lisa   .komitee-avatar { border-color: var(--color-lisa);    box-shadow: 0 0 18px rgba(76,175,125,0.25); }
+.person-jonah  .komitee-avatar { border-color: var(--color-jonah);   box-shadow: 0 0 18px rgba(232,118,138,0.25); }
+.person-maria  .komitee-avatar { border-color: var(--color-maria);   box-shadow: 0 0 18px rgba(184,124,192,0.25); }
+.person-raphi  .komitee-avatar { border-color: var(--color-raphi);   box-shadow: 0 0 18px rgba(90,180,200,0.25); }
+.person-kathi  .komitee-avatar { border-color: var(--color-kathi);   box-shadow: 0 0 18px rgba(212,193,68,0.25); }
+
+.person-lisa   .avatar-initials { color: var(--color-lisa); }
+.person-jonah  .avatar-initials { color: var(--color-jonah); }
+.person-maria  .avatar-initials { color: var(--color-maria); }
+.person-raphi  .avatar-initials { color: var(--color-raphi); }
+.person-kathi  .avatar-initials { color: var(--color-kathi); }
+
+.person-lisa:hover   { border-color: var(--color-lisa);    box-shadow: 0 6px 24px rgba(76,175,125,0.12); }
+.person-jonah:hover  { border-color: var(--color-jonah);   box-shadow: 0 6px 24px rgba(232,118,138,0.12); }
+.person-maria:hover  { border-color: var(--color-maria);   box-shadow: 0 6px 24px rgba(184,124,192,0.12); }
+.person-raphi:hover  { border-color: var(--color-raphi);   box-shadow: 0 6px 24px rgba(90,180,200,0.12); }
+.person-kathi:hover  { border-color: var(--color-kathi);   box-shadow: 0 6px 24px rgba(212,193,68,0.12); }
+
+/* Department tags under each Kernteam member */
+.komitee-dept-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
+  margin-top: 0.8rem;
+}
+
+.komitee-dept-tag {
+  font-family: var(--font-heading);
+  font-size: 0.52rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 2px 7px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--silver);
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════
+   COLOR-CODED MEMBER TAGS IN BEREICHE
+   ══════════════════════════════════════════ */
+.mt-lisa    { border-color: rgba(76,175,125,0.45) !important; color: var(--color-lisa) !important;    background: rgba(76,175,125,0.08) !important; }
+.mt-jonah   { border-color: rgba(232,118,138,0.45) !important; color: var(--color-jonah) !important;  background: rgba(232,118,138,0.08) !important; }
+.mt-maria   { border-color: rgba(184,124,192,0.45) !important; color: var(--color-maria) !important;  background: rgba(184,124,192,0.08) !important; }
+.mt-raphi   { border-color: rgba(90,180,200,0.45) !important; color: var(--color-raphi) !important;   background: rgba(90,180,200,0.08) !important; }
+.mt-kathi   { border-color: rgba(212,193,68,0.45) !important; color: var(--color-kathi) !important;   background: rgba(212,193,68,0.08) !important; }
+.mt-clara   { border-color: rgba(154,175,192,0.45) !important; color: var(--color-clara) !important;  background: rgba(154,175,192,0.08) !important; }
+.mt-ludwig  { border-color: rgba(208,128,192,0.45) !important; color: var(--color-ludwig) !important; background: rgba(208,128,192,0.08) !important; }
+.mt-paul    { border-color: rgba(125,200,128,0.45) !important; color: var(--color-paul) !important;   background: rgba(125,200,128,0.08) !important; }
+.mt-gabriel { border-color: rgba(224,88,72,0.45) !important; color: var(--color-gabriel) !important;  background: rgba(224,88,72,0.08) !important; }
+.mt-leonie  { border-color: rgba(122,180,216,0.45) !important; color: var(--color-leonie) !important; background: rgba(122,180,216,0.08) !important; }
+.mt-xaver   { border-color: rgba(168,180,200,0.45) !important; color: var(--color-xaver) !important;  background: rgba(168,180,200,0.08) !important; }
+.mt-kevin   { border-color: rgba(80,128,216,0.45) !important; color: var(--color-kevin) !important;   background: rgba(80,128,216,0.08) !important; }
+
+/* ══════════════════════════════════════════
+   BEREICH CARDS – ICONS & ENHANCED
+   ══════════════════════════════════════════ */
+.bereich-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  display: block;
+  opacity: 0.85;
+}
+
+.bereich-card:hover .bereich-line {
+  width: 50px;
+  transition: width 0.4s;
+}
+.bereich-line { transition: width 0.4s; }
+
+/* ══════════════════════════════════════════
+   TICKETS – STEP CONNECTORS & FORM
+   ══════════════════════════════════════════ */
+.kaufen-grid {
+  position: relative;
+}
+
+.kaufen-grid::before {
+  content: '';
+  position: absolute;
+  top: 3.5rem;
+  left: calc(16.66% + 1rem);
+  right: calc(16.66% + 1rem);
+  height: 1px;
+  background: linear-gradient(90deg, var(--gold), rgba(201,150,44,0.3), var(--gold));
+  pointer-events: none;
+}
+
+@media (max-width: 900px) {
+  .kaufen-grid::before { display: none; }
+}
+
+/* Improved ticket pre-order form */
+.preorder-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.preorder-form .form-row--full {
+  grid-template-columns: 1fr;
+}
+
+.preorder-form .form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-select {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(201,150,44,0.25);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  padding: 0.85rem 1.2rem;
+  outline: none;
+  transition: border-color 0.3s;
+  width: 100%;
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23c9962c' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-select:focus { border-color: var(--gold); }
+.form-select option { background: var(--deep); color: var(--champagne); }
+
+.form-coming-soon-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-heading);
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border: 1px solid rgba(201,150,44,0.3);
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  background: rgba(201,150,44,0.05);
+}
+
+.form-coming-soon-badge::before {
+  content: '◆';
+  font-size: 0.5rem;
+}
+
+/* ══════════════════════════════════════════
+   RESPONSIVE – KOMITEE
+   ══════════════════════════════════════════ */
+@media (max-width: 1100px) {
+  .komitee-grid--members { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 640px) {
+  .komitee-grid--members { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .komitee-card { padding: 1.5rem 1rem; }
+  .bereiche-grid { grid-template-columns: 1fr; }
+  .preorder-form .form-row { grid-template-columns: 1fr; }
+  .preorder-form { padding: 2rem 1.5rem !important; }
+  .tickets-grid--two { grid-template-columns: 1fr; }
+  .ticket-card--featured { transform: translateY(0); }
+}
+@media (max-width: 400px) {
+  .komitee-grid--members { grid-template-columns: 1fr; }
+}
+
+/* ══════════════════════════
+   BEREICHE GRID (Komitee)
+   ══════════════════════════ */
+.bereiche-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.bereich-card {
+  padding: 1.8rem;
+}
+
+.bereich-header {
+  margin-bottom: 1.2rem;
+}
+
+.bereich-header h3 {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.6rem;
+}
+
+.bereich-line {
+  width: 30px;
+  height: 1px;
+  background: var(--gold);
+}
+
+.bereich-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.member-tag {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.7rem;
+  background: rgba(201, 150, 44, 0.1);
+  border: 1px solid rgba(201, 150, 44, 0.3);
+  color: var(--gold-pale);
+}
+
+.member-tag--support {
+  background: transparent;
+  border-color: rgba(168, 180, 200, 0.2);
+  color: var(--silver);
+  font-style: italic;
+}

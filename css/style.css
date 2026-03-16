@@ -1,0 +1,433 @@
+/* ═══════════════════════════════════════════════
+   CARPE NOCTEM · Maturaball 2026
+   Herzjesu Gymnasium
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+
+/* ── Variables ─────────────────────────────── */
+:root {
+  --night:       #06060f;
+  --deep:        #0b0b1e;
+  --dark:        #111128;
+  --gold:        #c9962c;
+  --gold-light:  #e8c46a;
+  --gold-pale:   #f3e0a8;
+  --champagne:   #f5edd6;
+  --silver:      #a8b4c8;
+  --white:       #faf8f4;
+  --accent:      #7e4fa0;
+
+  --font-display: 'Cinzel Decorative', serif;
+  --font-heading: 'Cinzel', serif;
+  --font-body:    'EB Garamond', serif;
+
+  --ease-silk:    cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-dramatic: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ── Reset ─────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background: var(--night);
+  color: var(--champagne);
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--night);
+}
+
+/* ── Scrollbar ─────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--deep); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+
+/* ── Typography ────────────────────────────── */
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  color: var(--gold-pale);
+}
+
+h1 { font-size: clamp(2.5rem, 6vw, 5rem); }
+h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+h3 { font-size: clamp(1.3rem, 2.5vw, 1.9rem); }
+
+p { max-width: 65ch; }
+
+a {
+  color: var(--gold-light);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+a:hover { color: var(--white); }
+
+/* ── Navigation ────────────────────────────── */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.5s, backdrop-filter 0.5s;
+}
+
+.nav.scrolled {
+  background: rgba(6, 6, 15, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(201, 150, 44, 0.2);
+}
+
+.nav-logo {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: var(--gold-light);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.nav-logo span {
+  display: block;
+  font-family: var(--font-body);
+  font-style: italic;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  color: var(--silver);
+  margin-top: 1px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2.5rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--silver);
+  transition: color 0.3s;
+  position: relative;
+}
+
+.nav-links a:not(.nav-cta)::after {
+  content: '';
+  position: absolute;
+  bottom: -4px; left: 0; right: 100%;
+  height: 1px;
+  background: var(--gold);
+  transition: right 0.4s var(--ease-silk);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--gold-pale);
+}
+.nav-links a:hover:not(.nav-cta)::after,
+.nav-links a.active:not(.nav-cta)::after { right: 0; }
+
+.nav-cta {
+  font-family: var(--font-heading);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--night) !important;
+  background: var(--gold);
+  padding: 0.55rem 1.4rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.nav-cta:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
+}
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 4px;
+  position: relative;
+  z-index: 100;
+}
+
+.nav-toggle span {
+  width: 24px;
+  height: 1px;
+  background: var(--gold-light);
+  transition: all 0.3s;
+}
+
+/* ── Dividers / Ornaments ───────────────────── */
+.ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+.ornament-line {
+  flex: 1;
+  max-width: 120px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+
+.ornament-line.right {
+  background: linear-gradient(90deg, var(--gold), transparent);
+}
+
+.ornament-diamond {
+  width: 8px;
+  height: 8px;
+  background: var(--gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+.section-label {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+/* ── Sections ──────────────────────────────── */
+section {
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.section-inner {
+  padding: 8rem 0;
+}
+
+/* ── Gold line decoration ───────────────────── */
+.deco-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--gold), transparent);
+  margin: 1.2rem 0;
+}
+
+.deco-line.center { margin: 1.2rem auto; background: var(--gold); }
+
+/* ── Button group ──────────────────────────── */
+.btn-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-row--center { justify-content: center; }
+
+/* ── Buttons ───────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  transition: all 0.3s var(--ease-silk);
+  border: none;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--gold);
+  color: var(--night);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  color: var(--night);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(201, 150, 44, 0.35);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--gold-light);
+  border: 1px solid var(--gold);
+}
+.btn-outline:hover {
+  background: rgba(201, 150, 44, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ── Cards ─────────────────────────────────── */
+.card {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(201, 150, 44, 0.15);
+  padding: 2.5rem;
+  transition: border-color 0.4s, transform 0.4s;
+}
+
+.card:hover {
+  border-color: rgba(201, 150, 44, 0.4);
+  transform: translateY(-4px);
+}
+
+/* ── Gold shimmer text ──────────────────────── */
+.gold-text {
+  background: linear-gradient(135deg, var(--gold) 0%, var(--gold-pale) 50%, var(--gold) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 4s linear infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: 200% center; }
+}
+
+/* ── Fade-in animations ─────────────────────── */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.9s var(--ease-dramatic), transform 0.9s var(--ease-dramatic);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fallback: kein JS → alles sichtbar */
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.35s; }
+.reveal-delay-4 { transition-delay: 0.5s; }
+
+/* ── Footer ────────────────────────────────── */
+footer {
+  background: var(--deep);
+  border-top: 1px solid rgba(201, 150, 44, 0.2);
+  padding: 4rem 0 2rem;
+  text-align: center;
+}
+
+footer .footer-logo {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--gold-light);
+  letter-spacing: 0.15em;
+  margin-bottom: 0.5rem;
+}
+
+footer p {
+  color: var(--silver);
+  font-size: 0.9rem;
+  max-width: none;
+  margin-top: 0.3rem;
+}
+
+footer .footer-links {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  list-style: none;
+  margin: 2rem 0;
+}
+
+footer .footer-links a {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--silver);
+}
+footer .footer-links a:hover { color: var(--gold-light); }
+
+footer .footer-bottom {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  font-size: 0.8rem;
+  color: rgba(168, 180, 200, 0.5);
+}
+
+/* ── Responsive ────────────────────────────── */
+@media (max-width: 900px) {
+  .nav-links { display: none; }
+  .nav-toggle { display: flex; }
+
+  .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    background: var(--night);
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    font-size: 1rem;
+    z-index: 99;
+  }
+
+  .nav-links.open a {
+    font-size: 1.1rem;
+    letter-spacing: 0.2em;
+  }
+}
+
+@media (max-width: 600px) {
+  .section-inner { padding: 5rem 0; }
+  h1 { font-size: 2.2rem; }
+}
+
+/* ── Reduced motion ────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .gold-text {
+    animation: none;
+    background-position: 0 0;
+  }
+}
