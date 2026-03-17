@@ -197,6 +197,29 @@
   color: var(--champagne);
 }
 
+/* ── PDF Download Banner ───────────────────── */
+.sponsor-pdf-banner {
+  padding: 2.5rem;
+  border-color: rgba(201,150,44,0.25);
+  background: rgba(201,150,44,0.03);
+}
+
+.sponsor-pdf-inner {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+.sponsor-pdf-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+  padding-top: 0.2rem;
+}
+
+.sponsor-pdf-text {
+  flex: 1;
+}
+
 /* ── Responsive ─────────────────────────────── */
 @media (max-width: 900px) {
   .sponsor-grid--equal    { grid-template-columns: repeat(2, 1fr); }
@@ -209,4 +232,6 @@
   .sponsor-grid--equal    { grid-template-columns: 1fr; }
   .zusatz-grid            { grid-template-columns: 1fr; }
   .sponsor-kontakt        { padding: 2rem 1.5rem; }
+  .sponsor-pdf-inner      { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
+  .sponsor-pdf-banner     { padding: 2rem 1.5rem; }
 }
