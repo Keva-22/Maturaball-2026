@@ -3,7 +3,7 @@
    Herzjesu Gymnasium
    ═══════════════════════════════════════════════ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Great+Vibes&display=swap');
 
 /* ── Variables ─────────────────────────────── */
 :root {
@@ -19,6 +19,7 @@
   --accent:      #7e4fa0;
 
   --font-display: 'Cinzel Decorative', serif;
+  --font-script:  'Great Vibes', cursive;
   --font-heading: 'Cinzel', serif;
   --font-body:    'EB Garamond', serif;
 
@@ -94,21 +95,21 @@ a:hover { color: var(--white); }
 }
 
 .nav-logo {
-  font-family: var(--font-display);
-  font-size: 1rem;
+  font-family: var(--font-script);
+  font-size: 1.3rem;
   color: var(--gold-light);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  text-transform: none;
 }
 
 .nav-logo span {
   display: block;
-  font-family: var(--font-body);
-  font-style: italic;
-  font-size: 0.7rem;
+  font-family: var(--font-heading);
+  font-size: 0.55rem;
   letter-spacing: 0.25em;
+  text-transform: uppercase;
   color: var(--silver);
-  margin-top: 1px;
+  margin-top: 2px;
 }
 
 .nav-links {
@@ -346,10 +347,10 @@ footer {
 }
 
 footer .footer-logo {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
+  font-family: var(--font-script);
+  font-size: 1.8rem;
   color: var(--gold-light);
-  letter-spacing: 0.15em;
+  letter-spacing: 0.02em;
   margin-bottom: 0.5rem;
 }
 
