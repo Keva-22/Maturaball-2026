@@ -575,6 +575,61 @@
   transform: scale(1.04);
 }
 
+/* ── An- & Heimreise ──────────────────────── */
+.anreise-section {
+  background: var(--deep);
+}
+
+.anreise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.anreise-card {
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.anreise-icon {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.anreise-card h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+
+.anreise-card ul {
+  list-style: none;
+  text-align: left;
+}
+
+.anreise-card ul li {
+  font-size: 0.9rem;
+  color: var(--champagne);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.anreise-card ul li:first-child {
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.anreise-card ul li small {
+  color: var(--silver);
+  font-size: 0.8rem;
+}
+
+.anreise-card p {
+  font-size: 0.9rem;
+  color: var(--champagne);
+  margin-bottom: 0.8rem;
+}
+
 /* ── Kontakt ───────────────────────────────── */
 .kontakt-section {
   background: var(--night);
@@ -615,6 +670,9 @@
   .location-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
+  }
+  .anreise-grid {
+    grid-template-columns: 1fr;
   }
 
   .timeline { max-width: 100%; }
