@@ -709,4 +709,17 @@
   .timeline-content { padding: 1rem 1.2rem; min-width: 0; }
   .timeline-content h3 { font-size: 0.9rem; }
   .timeline-content p { font-size: 0.8rem; }
+
+  /* Location gallery stacks on small screens */
+  .location-gallery { grid-template-columns: 1fr; }
+
+  /* Anreise cards: tighter padding */
+  .anreise-card { padding: 1.8rem 1.2rem; }
+  .anreise-card ul li { font-size: 0.85rem; }
+  .anreise-card ul li small { font-size: 0.75rem; }
+
+  /* Kontakt / CTA sections */
+  .kontakt-inner { padding: 3rem 1.2rem; }
+  .kontakt-inner .btn { font-size: 0.55rem; letter-spacing: 0.1em; padding: 0.8rem 1rem; word-break: break-all; }
+  .tickets-cta-inner { padding: 3rem 1.2rem; }
 }
