@@ -404,7 +404,11 @@
   .kaufen-grid { grid-template-columns: 1fr; }
   .komitee-card--lead { flex-direction: column; }
   .tib-divider { display: none; }
-  .tickets-info-banner { gap: 1rem; padding: 1.2rem; }
+  .tickets-info-banner { gap: 1rem; padding: 1.2rem; flex-direction: column; }
+  .tib-item { min-width: 0; }
+  .page-hero { padding: 6rem 1.5rem 3rem; min-height: 28vh; }
+  .page-hero h1 { font-size: 2rem; }
+  .page-hero-sub { font-size: 0.9rem; }
 }
 
 /* ══════════════════════════════════════════

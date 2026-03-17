@@ -231,7 +231,10 @@
   .sponsor-pakete-grid    { grid-template-columns: 1fr; }
   .sponsor-grid--equal    { grid-template-columns: 1fr; }
   .zusatz-grid            { grid-template-columns: 1fr; }
-  .sponsor-kontakt        { padding: 2rem 1.5rem; }
-  .sponsor-pdf-inner      { flex-direction: column; align-items: center; text-align: center; gap: 1rem; }
-  .sponsor-pdf-banner     { padding: 2rem 1.5rem; }
+  .sponsor-kontakt        { padding: 1.5rem 1.2rem; }
+  .sponsor-kontakt-info   { grid-template-columns: 1fr; gap: 0.6rem; }
+  .sponsor-paket          { padding: 2rem 1.2rem; }
+  .zusatz-item            { padding: 1.5rem 1.2rem; }
+  .sponsor-card           { padding: 1.5rem 1rem; }
+  .sponsor-logo-placeholder { width: 100px; height: 56px; }
 }

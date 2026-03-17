@@ -363,10 +363,12 @@ footer p {
 
 footer .footer-links {
   display: flex;
-  gap: 2rem;
+  gap: 1rem 2rem;
   justify-content: center;
+  flex-wrap: wrap;
   list-style: none;
   margin: 2rem 0;
+  padding: 0 1rem;
 }
 
 footer .footer-links a {
@@ -429,7 +431,12 @@ footer .footer-bottom {
 
 @media (max-width: 600px) {
   .section-inner { padding: 5rem 0; }
+  .container { padding: 0 1.2rem; }
   h1 { font-size: 2.2rem; }
+  footer .footer-links { gap: 0.5rem 0.8rem; flex-wrap: wrap; justify-content: center; padding: 0 0.5rem; }
+  footer .footer-links a { font-size: 0.58rem; letter-spacing: 0.1em; }
+  .card { padding: 1.8rem 1.2rem; }
+  .btn { padding: 0.85rem 1.8rem; font-size: 0.7rem; word-break: break-all; text-align: center; }
 }
 
 /* ── Reduced motion ────────────────────────── */
