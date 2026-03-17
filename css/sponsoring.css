@@ -68,7 +68,7 @@
 /* ── Pakete Grid ────────────────────────────── */
 .sponsor-pakete-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
   align-items: start;
   max-width: 900px;
@@ -83,14 +83,13 @@
 }
 
 .sponsor-paket--featured {
-  border-color: rgba(168,180,200,0.35);
-  transform: translateY(-6px);
+  border-color: rgba(201,150,44,0.35);
+  background: rgba(201,150,44,0.03);
 }
 
-.sponsor-paket--gold {
-  border-color: rgba(201,150,44,0.5);
-  background: rgba(201,150,44,0.04);
-  transform: translateY(-10px);
+.sponsor-paket--platin {
+  border-color: rgba(201,150,44,0.6);
+  background: rgba(201,150,44,0.05);
 }
 
 .paket-badge {
@@ -106,7 +105,42 @@
 
 .paket-badge--bronze { background: rgba(158,123,74,0.2); color: #9e7b4a; }
 .paket-badge--silber { background: rgba(168,180,200,0.15); color: var(--silver); }
-.paket-badge--gold   { background: var(--gold); color: var(--night); }
+.paket-badge--gold   { background: rgba(201,150,44,0.25); color: var(--gold-light); }
+.paket-badge--platin { background: var(--gold); color: var(--night); }
+
+/* ── Zusatzpakete Grid ─────────────────────── */
+.zusatz-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.zusatz-item {
+  padding: 2rem 1.8rem;
+}
+
+.zusatz-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.zusatz-item p {
+  font-size: 0.9rem;
+  color: var(--champagne);
+  margin-bottom: 1rem;
+}
+
+.zusatz-hint {
+  font-family: var(--font-heading);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  margin-top: auto;
+}
 
 .paket-title {
   font-size: 1.2rem;
@@ -167,9 +201,12 @@
 @media (max-width: 900px) {
   .sponsor-grid--equal    { grid-template-columns: repeat(2, 1fr); }
   .sponsor-kontakt-info   { grid-template-columns: 1fr; }
+  .zusatz-grid            { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
-  .sponsor-grid--equal    { grid-template-columns: 1fr 1fr; }
+  .sponsor-pakete-grid    { grid-template-columns: 1fr; }
+  .sponsor-grid--equal    { grid-template-columns: 1fr; }
+  .zusatz-grid            { grid-template-columns: 1fr; }
   .sponsor-kontakt        { padding: 2rem 1.5rem; }
 }
